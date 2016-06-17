@@ -9,16 +9,15 @@ class IGImage {
 	public function __construct( $file, $caption = '' ){
 		$this->caption = trim( preg_replace("/\r|\n/", "", $caption) );
 		$this->filepath = $file;
-		$this->image = new Imagick( $this->filepath );
+		$this->image = getimagesize( $file );
 	}
 
 	public function getFormat(){
-		return $this->image->getImageFormat();
+		return $this->image['mime'];
 	}
 
 	public function isSquare(){
-		$imageSize = $this->image->getImageGeometry();
-		if ( $imageSize['width'] === $imageSize['height'] ) return true;
+		if ( $this->image[0] === $this->image[1] ) return true;
 		return false; 
 	}
 	
