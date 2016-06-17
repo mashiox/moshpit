@@ -1,0 +1,7 @@
+#statusMsg {
+    padding-top: 10px;
+}
+
+div#statusMsg div.alert {
+    display: none;
+}

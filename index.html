@@ -1,0 +1,71 @@
+<!doctype html>
+<head>
+    <title>Moshpit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="./moshpit.js"></script>
+    
+    <link rel="stylesheet" href="./moshpit.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+    
+    <div id="container">
+        
+        <div id="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Moshpit</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <div id="body" class="contianer-fluid">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-4">
+                    <form id="igForm">
+                        <div class="form-group">
+                            <label for="igUser">Instagram Username</label>
+                            <input type="text" class="form-control" id="igUser" name="username" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="igPass">Instagram Password</label>
+                            <input type="password" class="form-control" id="igPass" name="password" placeholder="Password">
+                        </div>
+                        <div class="input-group">
+                            <label for="gram" class="input-group-btn">
+                                <span class="btn btn-primary">
+                                    Select Photo
+                                    <input type="file" class="form-control" id="gram" style="display:none;">
+                                </span>
+                            </label>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="caption">Instagram Caption</label>
+                            <input type="text" class="form-control" id="caption" name="caption" placeholder="Hashtags and words!">
+                        </div>
+                        <div class="input-group">
+                            <input class="btn btn-primary" id="submit" type="button" value="Submit">
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div id="statusMsg" class="col-md-6 col-md-offset-4">
+                    <div id="uploadSuccess" class="alert alert-success" role="alert">Uploaded Successfully!</div>
+                    <div id="cannotReachIG" class="alert alert-danger" role="alert">Server Cannot Reach Instagram!</div>
+                    <div id="incompatImage" class="alert alert-danger" role="alert">Ensure uploaded image must be a JPEG and square!</div>
+                    <div id="apiFail" class="alert alert-danger" role="alert">Cannot reach Moshpit API</div>
+                    <div id="genFail" class="alert alert-danger" role="alert">An unknown error occured!</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
