@@ -8,8 +8,8 @@ class IGImage {
 
 	public function __construct( $file, $caption = '' ){
 		$this->caption = trim( preg_replace("/\r|\n/", "", $caption) );
-		$this->filepath = $file;
-		$this->image = getimagesize( $file );
+		$this->filepath = $file[0];
+		$this->image = getimagesize( $this->filepath );
 	}
 
 	public function getFormat(){

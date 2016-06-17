@@ -10,7 +10,7 @@ if ( isset( $_POST['user'], $_POST['password'], $_POST['caption'], $_FILES['user
 	$insta = new Instagram( $_POST['user'], $_POST['password'] );
 	$igImage = new IGImage( $_FILES['userfile']['tmp_name'], $_POST['caption'] );
 	
-	if ( $igImage->isSquare() && $igImage->getFormat() === "JPEG" ) {
+	if ( $igImage->isSquare() && $igImage->getFormat() === "image/jpeg" ) {
 		
 		$runtime = new Runtime( $insta, $igImage );
 		$runtime->loginUser();
